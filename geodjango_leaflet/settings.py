@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'geodjango_leaflet.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'NAME': 'geodjango_leaflet',
+         'NAME': 'geodjango',
          'USER': 'geodjango',
          'PASSWORD': 'geodjango',
          'HOST': 'localhost',
