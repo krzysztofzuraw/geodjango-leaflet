@@ -38,8 +38,21 @@ voivodeship_mapping = {
     'geom' : 'MULTIPOLYGON',
 }
 
-voivodeship_shp = os.path.abspath(os.path.join('data', 'PRG_jednostki_administracyjne_v10', 'województwa.shp'))
-point_csv = os.path.abspath(os.path.join('data', 'points.csv'))
+voivodeship_shp = os.path.abspath(
+    os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        'data',
+        'PRG_jednostki_administracyjne_v10',
+        'województwa.shp'
+    )
+)
+point_csv = os.path.abspath(
+    os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        'data',
+        'points.csv'
+    )
+)
 
 def run(verbose=True):
     lm = LayerMapping(Voivodeship, voivodeship_shp, voivodeship_mapping,
