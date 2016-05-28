@@ -43,26 +43,26 @@ voivodeship_mapping = {
     'geom' : 'MULTIPOLYGON',
 }
 
+voivodeship_shp = os.path.abspath(
+    os.path.join(
+        settings.BASE_DIR,
+        'data',
+        'PRG_jednostki_administracyjne_v10',
+        'województwa.shp'
+    )
+)
+point_csv = os.path.abspath(
+    os.path.join(
+        settings.BASE_DIR,
+        'data',
+        'points.csv'
+    )
+)
+
 class Command(BaseCommand):
     help = 'Load inital data from data folder'
 
     def handle(self, *args, **options):
-        voivodeship_shp = os.path.abspath(
-            os.path.join(
-                settings.BASE_DIR,
-                'data',
-                'PRG_jednostki_administracyjne_v10',
-                'województwa.shp'
-            )
-        )
-        point_csv = os.path.abspath(
-            os.path.join(
-                settings.BASE_DIR,
-                'data',
-                'points.csv'
-            )
-        )
-
         # load shp file
         lm = LayerMapping(Voivodeship, voivodeship_shp, voivodeship_mapping,
                           transform=False, encoding='iso-8859-1')
