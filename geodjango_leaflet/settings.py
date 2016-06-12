@@ -132,6 +132,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+STATIC_ROOT = '/opt/geodjango/static'
+
 LEAFLET_CONFIG = {
    'DEFAULT_CENTER': (52.00,20.00),
    'DEFAULT_ZOOM': 6,
@@ -146,5 +148,3 @@ CACHES = {
         'LOCATION': '127.0.0.1:6379',
     },
 }
-
-
