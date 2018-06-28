@@ -77,7 +77,7 @@ class Command(BaseCommand):
         with open(point_csv) as point_file:
             for line in point_file:
                 name, lon, lat = line.split(',')
-                point = "POINT(%s %s)" % (lat.strip(), lon.strip())
+                point = "POINT(%s %s)" % (lon.strip(), lat.strip())
                 Point.objects.create(name=name, geom=geos.fromstr(point))
 
         self.stdout.write(
